@@ -4,6 +4,7 @@ Test Setup     Open chrome Browser and goto QAbundle instance
 Library           SeleniumLibrary
 Resource            ../PageObejcts/DuplicateForm.robot
 Resource            ../PageObejcts/Generic.robot
+Test Teardown       Close Browser
 
 
 *** Variables ***

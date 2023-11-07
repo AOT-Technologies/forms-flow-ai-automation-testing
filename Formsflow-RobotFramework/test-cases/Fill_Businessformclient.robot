@@ -11,7 +11,7 @@ Resource            ../PageObejcts/FormfillClient.robot
 Resource            ../PageObejcts/Generic.robot
 Resource            ../PageObejcts/ApplicationPage.robot
 
-Suite Teardown    Close Browser
+Test Teardown       Close Browser
 
 *** Variables ***
 ${formname_client}       New Business

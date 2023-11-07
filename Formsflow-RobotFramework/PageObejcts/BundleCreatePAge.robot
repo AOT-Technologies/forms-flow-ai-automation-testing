@@ -27,7 +27,7 @@ CreateBundle
     Input Text    //input[@placeholder='Search...']    ${formname}
     Press Keys    //input[@placeholder='Search...']    ENTER
     sleep    3
-    Select Checkbox    xpath=//html/body/div[2]/div/div/div[2]/div[2]/div/table/thead/tr/th[1]/span/span[1]/input
+    Select Checkbox    xpath=//th[@class='text-center pb-4']/input
     Click Button    xpath=//button[contains(text(),'Insert')]
     Click Button    xpath=//*[@id="main"]/div/div[2]/div[2]/section[2]/div[2]/div/div[1]/table/tbody/tr[2]/td/button
     Input Text    xpath=//textarea[@placeholder='Enter criteria']    ${criteria}
@@ -71,7 +71,7 @@ Verify negative flow-enter same bundle name created earlier
     Input Text    //input[@placeholder='Search...']    ${formname}
     Press Keys    //input[@placeholder='Search...']    ENTER
     sleep    3
-    Select Checkbox    xpath=//html/body/div[2]/div/div/div[2]/div[2]/div/table/thead/tr/th[1]/span/span[1]/input
+    Select Checkbox    xpath=//th[@class='text-center pb-4']/input
     Click Button    xpath=//button[contains(text(),'Insert')]
     scroll element into view    xpath=//button[contains(text(),'Save & Preview')]
     sleep    0.5s

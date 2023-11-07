@@ -8,7 +8,7 @@ Resource            ../PageObejcts/FormsLandingPAge.robot
 Resource            ../PageObejcts/TemplatePage.robot
 Resource            ../PageObejcts/workflowSelectPage.robot
 
-Suite Teardown    Close Browser
+Test Teardown    Close Browser
 
 *** Test Cases ***
 Template_Create

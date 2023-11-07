@@ -4,6 +4,7 @@ Test Setup           Open chrome Browser and goto QAbundle instance
 Library             SeleniumLibrary
 Resource            ../PageObejcts/FormOrBundleDelete.robot
 Resource            ../PageObejcts/Generic.robot
+Test Teardown    Close Browser
 
 *** Test Cases ***
 

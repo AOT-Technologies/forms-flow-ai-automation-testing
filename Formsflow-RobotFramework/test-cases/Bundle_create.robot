@@ -13,7 +13,7 @@ Resource            ../PageObejcts/ApplicationPage.robot
 
 Resource            ../PageObejcts/workflowSelectPage.robot
 
-Suite Teardown    Close Browser
+Test Teardown       Close Browser
 
 *** Variables ***
 ${Bundle_form}       Automation_bundle

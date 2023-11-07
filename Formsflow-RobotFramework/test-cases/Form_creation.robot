@@ -5,7 +5,7 @@ Library           SeleniumLibrary
 Library           DateTime
 Resource            ../PageObejcts/FormCreate.robot
 Resource            ../PageObejcts/Generic.robot
-Suite Teardown    Close Browser
+Test Teardown    Close Browser
 
 *** Test Cases ***
 

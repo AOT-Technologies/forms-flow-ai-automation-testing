@@ -20,8 +20,9 @@ ${username_reviewer}     formsflow-reviewer
 
 *** Keywords ***
 Open chrome Browser and goto QAbundle instance
-    Open Browser       ${url}     browser=chrome    options=add_argument("--headless") 
-    Maximize Browser Window
+     Open Browser       ${url}     browser=chrome    options=add_argument("--headless")
+#      Open Browser       ${url}     browser=chrome
+      Maximize Browser Window
 Login To Qaee instance as designer
 
     Wait Until Element Is Visible    //*[@id="username"]

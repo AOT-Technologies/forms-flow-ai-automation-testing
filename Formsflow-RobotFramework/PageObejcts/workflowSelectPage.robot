@@ -16,7 +16,7 @@ select workflow and publish to client
     sleep   4
     click Element    xpath=//div[@class=' css-1hwfws3']
     sleep    2
-    Input Text    xpath=//*[@id="selectWorkflow"]    ${workflow-name}
+    Input Text    xpath=//div[@class=' css-1hwfws3']/div/div/input    ${workflow-name}
     Press Keys    xpath=//div[@class=' css-1hwfws3']/div/div/input    ENTER
     Click Button    xpath=//button[contains(text(),'Next')]
     Click Element        xpath=//input[@name='Check box to associate form with a workflow']
