@@ -73,7 +73,7 @@ jobs:
       run: |
         for file in ./Formsflow-RobotFramework/test-cases/AdminPermissions.robot; do
           echo "Running test case: $file"
-          robot -d results "$file"
+          robot -d ./Formsflow-RobotFramework/results "$file"
           echo "Sleeping for 1 minute before the next test case"
           sleep 60
         done
