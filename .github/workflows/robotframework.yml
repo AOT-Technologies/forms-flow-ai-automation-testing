@@ -67,11 +67,6 @@ jobs:
 
     - name: Install Robot Framework Browser
       run: pip install robotframework-browser
-    
-    - name: Delay for 1 minute
-      run: |
-        echo "Sleeping for 1 minutes"
-        sleep 60
 
     - name: Run Robot Framework Tests
       id: robot-test
