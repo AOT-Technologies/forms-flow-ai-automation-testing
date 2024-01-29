@@ -11,7 +11,8 @@ on:
       - develop
   schedule:
     - cron: '0 0 */2 * *' # Schedule to run every two days
-
+  workflow_dispatch:
+  
 jobs:
   robot-framework:
     runs-on: ubuntu-latest
