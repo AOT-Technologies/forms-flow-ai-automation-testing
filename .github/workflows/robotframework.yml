@@ -72,7 +72,7 @@ jobs:
       id: robot-test
       run: |
         mkdir -p results
-        for file in ./Formsflow-RobotFramework/test-cases/AdminPermissions.robot; do
+        for file in ./Formsflow-RobotFramework/test-cases/Bundle_create.robot; do
           echo "Running test case: $file"
           robot --outputdir results "$file"
         done
