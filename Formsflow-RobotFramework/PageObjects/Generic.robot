@@ -28,7 +28,7 @@ Open chrome Browser and goto QAbundle instance
 
      Open Browser       ${url}        browser=chrome    options=add_argument("--headless")
      #Open Browser       ${url}        ${browser_name}
-      Maximize Browser Window
+     Maximize Browser Window
 
 Login To QA Instance
 	  sleep                             5

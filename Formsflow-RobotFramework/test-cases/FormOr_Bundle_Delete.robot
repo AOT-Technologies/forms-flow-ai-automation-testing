@@ -6,8 +6,7 @@ Resource            ../PageObjects/FormOrBundleDelete.robot
 Resource            ../PageObjects/Generic.robot
 
 *** Test Cases ***
-Repeat My Test Case
-    Repeat Test    3
+
     
 Deleting a Form
     [Tags]    Sanity
