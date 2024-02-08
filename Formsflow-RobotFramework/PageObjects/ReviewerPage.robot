@@ -13,16 +13,16 @@ ReviewerAction
     sleep                          10
     Click Element               //*[@data-testid="clam-btn"]
     sleep                          8
-    Execute JavaScript           window.scrollTo(0, document.body.scrollHeight)
+#    Execute JavaScript           window.scrollTo(0, document.body.scrollHeight)
+#    sleep                          10
+    Click Element               //*[@id="service-task-details-tabpane-form"]/div/div/div[2]/div/div/div/div/div[1]/ol/li[2]/span[2]
     sleep                          10
-    Click Element               //span[contains(text(),'Automation_Freedom')]
-    sleep                          10
     Execute JavaScript           window.scrollTo(0, document.body.scrollHeight)
-    sleep                          8
+    sleep     10
     click Element               //div[@class='choices form-group formio-choices' and @tabindex='-1']
     sleep                          8
-    Execute JavaScript           window.scrollTo(0, document.body.scrollHeight)
-    Sleep                           4
+#    Execute JavaScript           window.scrollTo(0, document.body.scrollHeight)
+#    Sleep                           4
     Input Text                  //*[@id="ec2oa9"]/div[1]/div[2]/input       ${action}
     Press Keys                  //*[@id="ec2oa9"]/div[1]/div[2]/input       ENTER
     Click Element               //button[@name='data[submitAction]']

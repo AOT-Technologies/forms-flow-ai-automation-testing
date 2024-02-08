@@ -36,6 +36,7 @@ Login To QA Instance
       Input Text                       ${enter_username}     ${username}
       Input Password                   ${enter_password}     ${password}
       Click Button                     ${login}
+      Maximize Browser Window
       sleep                             5
 
 Close Browser session
@@ -50,7 +51,15 @@ validate success message after form create
     Should Be Equal As Strings          ${response}    Form-Workflow association saved.
 
 logout
-	sleep                               10
-	Click Element                       //div[@class='nav-item dropdown']/a[@class='dropdown-toggle nav-link']
-    Click Element                       //a[normalize-space()='Logout']
 
+      sleep   20
+      ${toast_is_displayed}=  Run Keyword And Return Status   Page Should Contain Element    //div[@class='Toastify__toast Toastify__toast--success']
+     Log   ${toast_is_displayed}
+    Run Keyword If   ${toast_is_displayed}==True    Click Element    xpath=//div[@role='alert']
+#    Click Element    xpath=//div[@role='alert']
+#         Wait Until Page Does Not Contain Element     //div[contains(text(),'Form-Workflow association saved.')]     timeout=50s
+
+              Click Element    //span[@class='navbar-toggler-icon']
+
+	Click Element            //div[@class='nav-item dropdown']/a[@class='dropdown-toggle nav-link']
+    Click Element            //a[normalize-space()='Logout']

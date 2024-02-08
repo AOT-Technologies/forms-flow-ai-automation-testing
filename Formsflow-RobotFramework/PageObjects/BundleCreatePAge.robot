@@ -16,6 +16,7 @@ ${criteria}       textField== 'yes'
 
 *** Keywords ***
 CreateBundle
+	sleep   6
     Wait Until Element Is Visible    //span[text()='Form Bundle']
     Click Element                    //span[text()='Form Bundle']
     sleep    2

@@ -19,6 +19,8 @@ Fetch Submission ID
     RETURN                      ${id_value}
 
 Check status of form submitted
+	Click Element    //span[@class='navbar-toggler-icon']
+    sleep      5
 	Click Element      //a[@data-testid='applications-nav-link']
 	sleep    3
 
