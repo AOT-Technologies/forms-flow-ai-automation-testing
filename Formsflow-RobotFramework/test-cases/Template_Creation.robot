@@ -5,8 +5,7 @@ Library           SeleniumLibrary
 Library           DateTime
 Resource          ../PageObjects/Generic.robot
 Resource          ../PageObjects/TemplatePage.robot
-
-Suite Teardown    Close Browser
+Test Teardown    Close Browser
 
 *** Test Cases ***
 Template_Create

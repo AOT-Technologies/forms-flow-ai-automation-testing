@@ -52,6 +52,7 @@ Fill_Freedomform
     sleep    7
 
 Fill_BundleForm
+    Sleep           3
     Input Text    //*[@name="data[textField]"]    ${textField}
     Input Text     //*[@name="data[textArea]"]    ${textArea}
 	Click Button     //button[contains(text(),'Submit Form')]

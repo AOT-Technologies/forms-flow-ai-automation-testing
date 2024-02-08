@@ -11,7 +11,7 @@ ReviewerAction
 	sleep                           10
     Click Element                //span[contains(@title,'Form Name')]
     sleep                          10
-    Click Element               //span[text()='Claim']
+    Click Element               //*[@data-testid="clam-btn"]
     sleep                          8
     Execute JavaScript           window.scrollTo(0, document.body.scrollHeight)
     sleep                          10
