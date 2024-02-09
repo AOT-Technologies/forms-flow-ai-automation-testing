@@ -56,7 +56,7 @@ logout
       ${toast_is_displayed}=  Run Keyword And Return Status   Page Should Contain Element    //div[@class='Toastify__toast Toastify__toast--success']
      Log   ${toast_is_displayed}
     Run Keyword If   ${toast_is_displayed}==True    Click Element    xpath=//div[@role='alert']
-    Click Element    xpath=//div[@role='alert']
+#    Click Element    xpath=//div[@role='alert']
 #         Wait Until Page Does Not Contain Element     //div[contains(text(),'Form-Workflow association saved.')]     timeout=50s
     sleep    40
               Click Element    //span[@class='navbar-toggler-icon']
