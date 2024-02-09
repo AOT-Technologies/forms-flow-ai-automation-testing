@@ -29,28 +29,28 @@ Bundle_Create
     Generic.validate success message after form create
     Generic.logout
 
-#Bundle_FormfillByClient
-#   [Tags]    Fillform
-#  Generic.Login To QA Instance    ${client_user}
-#  FormsLandingPAge.Search Bundle_Form   ${Bundle_form}
-#  FormfillClient.Fill_BundleForm
-#  FormfillClient.check second bundle form displayed
-#  FormfillClient.Fill_Freedomform
-#  Applicationpage.Check status of form submitted
-#  Generic.logout
-#
-#
-#Bundle_TaskActionByReviewer
-#  [Tags]    ReviewerAction
-#  Generic.Login To QA Instance   ${reviewer_user}
-#  ReviewerPage.ReviewerAction
-#  Applicationpage.Check status of form submitted
-#
-#BundlingRBAC_negative
-#
-#	[Tags]    Sanity
-#    Generic.Login To QA Instance   ${designer_user}
-#    BundleCreatePAge.Verify negative flow-enter same bundle name created earlier
+Bundle_FormfillByClient
+   [Tags]    Fillform
+  Generic.Login To QA Instance    ${client_user}
+  FormsLandingPAge.Search Bundle_Form   ${Bundle_form}
+  FormfillClient.Fill_BundleForm
+  FormfillClient.check second bundle form displayed
+  FormfillClient.Fill_Freedomform
+  Applicationpage.Check status of form submitted
+  Generic.logout
+
+
+Bundle_TaskActionByReviewer
+  [Tags]    ReviewerAction
+  Generic.Login To QA Instance   ${reviewer_user}
+  ReviewerPage.ReviewerAction
+  Applicationpage.Check status of form submitted
+
+BundlingRBAC_negative
+
+	[Tags]    Sanity
+    Generic.Login To QA Instance   ${designer_user}
+    BundleCreatePAge.Verify negative flow-enter same bundle name created earlier
 
 
 
