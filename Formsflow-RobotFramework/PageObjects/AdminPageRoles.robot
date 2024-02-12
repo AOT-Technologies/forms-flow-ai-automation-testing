@@ -21,6 +21,8 @@ ${ErrorMessage}           Role names cannot contain special characters except _ 
 
 
 Click on Roles
+	 sleep   10
+    Click Element    //span[@class='navbar-toggler-icon']
     click element                       //a[@data-testid='admin-nav-link']
     sleep                               3
     click element                       //*[@data-testid="application-text-1"]

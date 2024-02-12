@@ -13,7 +13,7 @@ ${AccessToAll}            All groups have access to the dashboard
 Adding a new Group
 
     click element                       //div[@data-testid='dashboard-remaining-group-0']
-    sleep                                4
+    sleep                                20
     Element Should Be Visible           //div[contains(text(),'Update success!')]
     log to console                      Added a new group in the dashboard
     sleep                                 3
@@ -29,13 +29,14 @@ Remove a group from Dashboard
     sleep                               3
     sleep                               4
     click element                       //i[@data-testid='dashboard-remove-auth-btn-1']
-    sleep                               2
+    sleep                               20
     Element Should Be Visible           //div[contains(text(),'Update success!')]
 
 
 
 Basic Dashboard Permissions
-
+    sleep   10
+    Click Element    //span[@class='navbar-toggler-icon']
     click element                       //a[@data-testid='admin-nav-link']
     sleep                               3
     page should contain                   Dashboard

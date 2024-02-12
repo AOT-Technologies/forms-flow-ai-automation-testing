@@ -9,6 +9,8 @@ ${FilterGroup}          formsflow-designer
 *** Keywords ***
 
 Click on Users
+	 sleep   10
+     Click Element       //span[@class='navbar-toggler-icon']
      click element                      //a[@data-testid='admin-nav-link']
      sleep                              3
      click element                      //*[@data-testid="application-text-2"]
