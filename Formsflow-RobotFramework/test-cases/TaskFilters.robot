@@ -8,10 +8,15 @@ Resource            ../PageObjects/Generic.robot
 Test Teardown    Close Browser
 
 *** Variables ***
-
+${row}   5
+${column}  1
 *** Test Cases ***
 
 Task filters cases
-    Generic.Login To QA Instance   ${test_reviewer}
+	 ${username_reviewer}  ${password}=    Generic.Retrieve Username and Password   ${row}   ${column}
+
+     Log    First Value: ${username_reviewer}
+
+    Generic.Login To QA Instance    ${username_reviewer}   ${password}
     TaskFilterCreate.Check for taskfilters in the list
     TaskFilterCreate.Create new Taskfilter

@@ -7,22 +7,38 @@ Documentation     A resource file with reusable keywords and variables.
 ...               by the imported SeleniumLibrary.
 
 Library           SeleniumLibrary
-
+Library    ExcelLibrary
+Library    RPA.Excel.Files
 *** Variables ***
 
 ${url}                   https://forms-flow-web-qaee.aot-technologies.com/
 ${enter_username}        //*[@id="username"]
 ${enter_password}        //*[@id="password"]
 ${login}                 //*[@id="kc-login"]
-${designer_user}         formsflow-designer
-${client_user}           formsflow-client
-${browser_name}          Chrome
-${reviewer_user}         formsflow-reviewer
-${admin_user}            john.honai
-${test_reviewer}         test-reviewer
-${password}              aot123
+#${designer_user}         formsflow-designer
+#${client_user}           formsflow-client
+#${browser_name}          Chrome
+#${reviewer_user}         formsflow-reviewer
+#${admin_user}            john.honai
+#${test_reviewer}         test-reviewer
+#${password}              aot123
+*** Variables ***
+${Excel_FILE}     D:\\updated_develop\\forms-flow-ai-automation-testing\\Formsflow-RobotFramework\\PageObjects\\Resource\\Datasheet.xlsx
 
 *** Keywords ***
+Retrieve Username and Password
+    # Open Excel file
+   [Arguments]    ${row}   ${column}
+    Open Workbook      ${Excel_FILE}
+    ${username}=   Get Cell Value     ${row}   ${column}
+    ${password}=    Get Cell Value     2    2
+    Log    Value from second row, first column: ${username}
+   Log    Value from second row, second column: ${password}
+
+    [Return]    ${username}   ${password}
+    Close Workbook
+
+
 
 Open chrome Browser and goto QAbundle instance
 
@@ -32,7 +48,7 @@ Open chrome Browser and goto QAbundle instance
 
 Login To QA Instance
 	  sleep                             5
-	  [Arguments]                      ${username}
+	  [Arguments]                      ${username}   ${password}
       Input Text                       ${enter_username}     ${username}
       Input Password                   ${enter_password}     ${password}
       Click Button                     ${login}

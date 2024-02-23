@@ -10,11 +10,17 @@ Test Teardown    Close Browser
 
 *** Variables ***
 ${Bundle_form}       Automation_bundle
-
+*** Variables ***
+${row}   5
+${column}  1
 *** Test Cases ***
 
 TaskSearchByReviewer_listview
-   Generic.Login To QA Instance  ${reviewer_user}
+  ${username_reviewer}  ${password}=    Generic.Retrieve Username and Password   ${row}   ${column}
+
+     Log    First Value: ${username_reviewer}
+
+    Generic.Login To QA Instance    ${username_reviewer}   ${password}
    ReviewerPage.searchInListView
 
 

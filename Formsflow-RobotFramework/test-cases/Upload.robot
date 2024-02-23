@@ -7,8 +7,16 @@ Resource            ../PageObjects/FormsLandingPAge.robot
 Resource            ../PageObjects/Generic.robot
 Suite Teardown    Close Browser
 
+
+*** Variables ***
+${row}  2
+${column}  1
 *** Test Cases ***
 
 Upload Form
-    Generic.Login To QA Instance   ${designer_user}
+    ${username_designer}  ${password}=    Generic.Retrieve Username and Password   ${row}   ${column}
+
+     Log    First Value: ${username_designer}
+
+    Generic.Login To QA Instance    ${username_designer}   ${password}
     FormsLandingPAge.Upload Form

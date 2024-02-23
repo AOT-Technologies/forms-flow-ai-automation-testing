@@ -12,11 +12,15 @@ Test Teardown    Close Browser
 *** Variables ***
 ${search}       Automation Draft test
 ${form_id}      65828aa77eb909f9083f8fb4
-
+${row}  3
+${column}    1
 *** Test Cases ***
 
 New Draft
-    Generic.Login To QA Instance     ${client_user}
+	 ${client_user}  ${password}=    Generic.Retrieve Username and Password   ${row}   ${column}
+
+     Log    First Value: ${client_user}
+    Generic.Login To QA Instance     ${client_user}   ${password}
     FormsLandingPAge.Search Form     ${search}   ${form_id}
     DraftPage.Create New draft
     DraftPage.Check for created Draft
@@ -27,7 +31,10 @@ New Draft
 
 Draft Filters
 	[Tags]    sanity
-    Generic.Login To QA Instance    ${client_user}
+    ${client_user}  ${password}=    Generic.Retrieve Username and Password   ${row}   ${column}
+
+     Log    First Value: ${client_user}
+    Generic.Login To QA Instance     ${client_user}   ${password}
     DraftPage.Check for created Draft
     DraftPage.Filter with draftName
     DraftPage.Filter with Modified Date

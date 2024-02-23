@@ -7,10 +7,17 @@ Resource          ../PageObjects/Generic.robot
 Resource          ../PageObjects/TemplatePage.robot
 Test Teardown    Close Browser
 
+*** Variables ***
+${row} 2
+${column}  1
 *** Test Cases ***
 Template_Create
     [Tags]    Sanity
-    Generic.Login To QA Instance  ${designer_user}
+   ${username_designer}  ${password}=    Generic.Retrieve Username and Password   ${row}   ${column}
+
+     Log    First Value: ${username_designer}
+
+    Generic.Login To QA Instance    ${username_designer}   ${password}
     TemplatePage.select a form and saving it as template    6579aad77eb909f9083f87ee
     TemplatePage.Choose From Template
     TemplatePage.Search category

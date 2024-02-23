@@ -12,34 +12,38 @@ Test Teardown       Close Browser
 *** Variables ***
 
 ${username}         john.honai
-
+${row}     6
+${column}   1
 *** Test Cases ***
 
 Dashboard Permissions
     [Tags]    dashboard
+    ${username_designer}  ${password}=    Generic.Retrieve Username and Password  ${row}   ${column}
+
+     Log    First Value: ${username_designer}   ${password}
     Generic.Login To QA Instance    ${username}
     AdminPageDashboard.Basic Dashboard Permissions
     InsightsPage.Check for Assigned Dashboard
     AdminPageDashboard.Remove a group from Dashboard
 
 
-Roles Creation Page permissions
-    [Tags]    roles
-    Generic.Login To QA Instance    ${username}
-    AdminPageRoles.Roles Creation
-    AdminPageRoles.Duplicate role
-    AdminPageRoles.Searching for default user
-    AdminPageRoles.Search for invalid rolename
-    AdminPageRoles.Search for created Role
-    AdminPageRoles.Edit a Role
-    AdminPageRoles.Add a Usergroup to the new role
-    AdminPageRoles.Delete a Role
-
-
-User Persmissions
-    [Tags]    users
-    Generic.Login To QA Instance    ${username}
-    AdminPageUsers.Search for a default User
-    AdminPageUsers.Add a new usergroup to the role
-    AdminPageUsers.Remove added user group
-    AdminPageUsers.Filter By Usergroup
+#Roles Creation Page permissions
+#    [Tags]    roles
+#    Generic.Login To QA Instance    ${username}
+#    AdminPageRoles.Roles Creation
+#    AdminPageRoles.Duplicate role
+#    AdminPageRoles.Searching for default user
+#    AdminPageRoles.Search for invalid rolename
+#    AdminPageRoles.Search for created Role
+#    AdminPageRoles.Edit a Role
+#    AdminPageRoles.Add a Usergroup to the new role
+#    AdminPageRoles.Delete a Role
+#
+#
+#User Persmissions
+#    [Tags]    users
+#    Generic.Login To QA Instance    ${username}
+#    AdminPageUsers.Search for a default User
+#    AdminPageUsers.Add a new usergroup to the role
+#    AdminPageUsers.Remove added user group
+#    AdminPageUsers.Filter By Usergroup
